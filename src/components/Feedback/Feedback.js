@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './Feedback.module.scss';
+import {Container} from './Feedback.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
-      <ul className={s.buttonList}>
-        {options.map(option => (
+      <Container>
+        {Object.keys(options).map(option => (
           <li key={option}>
             <button
-              className={s.button}
               type="button"
               onClick={() => onLeaveFeedback(option)}
               key={option}
@@ -18,7 +17,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             </button>
           </li>
         ))}
-      </ul>
+      </Container>
     );
   };
   
